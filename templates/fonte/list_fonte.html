@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Lista de Fonte - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+   <br />
+    <a href="{% url 'fonte:add_fonte' %}">Cadastro de novo fonte</a>
+  <br />
+  <br />
+  <b>Lista de Fonte</b>
+  <br />
+  <br />
+  <table border="1">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descricao</th>
+        <th scope="col">url</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for fonte in fonte %}
+        <tr>
+          <th>{{ fonte.id }}</th>
+          <td>{{ fonte.name }}</td>
+          <td>{{ fonte.description }}</td>
+          <td>{{ fonte.url }}</td>
+            <td>
+                <a href="{{ fonte.url }}" target="_blank">Acessar</a>
+          <td>
+            <a href="{% url 'fonte:edit_fonte' fonte.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'fonte:delete_fonte' fonte.id %}" >Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

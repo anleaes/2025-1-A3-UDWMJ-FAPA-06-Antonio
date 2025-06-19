@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls', namespace='core')),
     path('categories/', include('categories.urls', namespace='categories')),
+    path('fonte/', include('fonte.urls', namespace='fonte')),
 
 ]
 
