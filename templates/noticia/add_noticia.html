@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Adicionar Noticia - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+  <br />
+  <b>Cadastro de Noticia</b>
+  <br />
+  <br />
+  <form action="" method="POST">
+    {% csrf_token %}
+    <label>Titulo:</label>
+    <br />
+    {{ form.titulo }}
+    <br />
+    <label>Conteudo:</label>
+    <br />
+    {{ form.conteudo }}
+    <br />
+    <br />
+    <label>Data da Publicacao:</label>
+    <br />
+    {{ form.dataPublicacao }}
+    <br />
+    <label>categoria:</label>
+    <br />
+    {{ form.categoria }}
+    <br />
+    <br />
+    <button type="submit">Salvar</button>
+  </form>
+{% endblock %}
