@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Lista de Noticia - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+   <br />
+    <a href="{% url 'noticia:add_noticia' %}">Cadastro de novo noticia</a>
+  <br />
+  <br />
+  <b>Lista de Noticia</b>
+  <br />
+  <br />
+  <table border="1">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Conteudo</th>
+        <th scope="col">Data da Publicacao</th>
+        <th scope="col">Categoria</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for noticia in noticia %}
+        <tr>
+          <th>{{ noticia.id }}</th>
+          <td>{{ noticia.name }}</td>
+          <td>{{ noticia.description }}</td>
+          <td>{{ noticia.url }}</td>
+            <td>
+                <a href="{{ noticia.url }}" target="_blank">Acessar</a>
+          <td>
+            <a href="{% url 'noticia:edit_noticia' noticia.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'noticia:delete_noticia' noticia.id %}" >Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
