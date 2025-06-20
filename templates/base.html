@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/arquivo_com_estilos.css' %}">
-    <title>{% block title %}Nome do meu App{% endblock title %}</title>
+    <title>{% block title %}Noticias Personalizadas{% endblock title %}</title>
 </head>
 <body>
     
@@ -15,6 +15,7 @@
     <br />
     <a href="{% url 'categories:list_categories' %}" ><button onclick="mudarCor()">Categorias</button></a>
     <a href="{% url 'fonte:list_fonte' %}" ><button onclick="mudarCor()">Fonte</button></a>
+    <a href="{% url 'autor:list_autor' %}" ><button onclick="mudarCor()">Autor</button></a>
     <a href="#" ><button onclick="alertarMensagem()">Produtos</button></a>
     <a href="#" ><button onclick="alertarMensagem()">Clientes</button></a>
     <a href="#" ><button onclick="alertarMensagem()">Pedidos</button></a>

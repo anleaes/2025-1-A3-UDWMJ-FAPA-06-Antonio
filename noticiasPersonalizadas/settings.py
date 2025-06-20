@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig', 
     'categories.apps.CategoriesConfig',
     'fonte.apps.FonteConfig',
+    'autor.apps.AutorConfig',
 ]
 
 MIDDLEWARE = [
