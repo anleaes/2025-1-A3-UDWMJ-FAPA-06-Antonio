@@ -1,5 +1,7 @@
 from django.db import models
 from categories.models import Category
+from fonte.models import Fonte
+from autor.models import Autor
 
 # Create your models here.
 
@@ -8,8 +10,8 @@ class Noticia(models.Model):
     conteudo = models.CharField('Conteudo', max_length=500)
     dataPublicacao = models.DateField('Data da Publicacao', max_length=200, blank=True, null=True)
     noticia_category = models.ManyToManyField(Category, through='NoticiaCategoria', blank=True)
-    fonte = models.CharField('Fonte', max_length=50, blank=True, null=True)
-    autor = models.CharField('Autor', max_length=50, blank=True, null=True)
+    fonte = models.ForeignKey(Fonte, on_delete=models.CASCADE, default=None, null=True, blank=True)
+    autor = models.ForeignKey(Autor, on_delete=models.CASCADE, default=None, null=True, blank=True)
     
     class Meta:
         verbose_name = 'Noticia'

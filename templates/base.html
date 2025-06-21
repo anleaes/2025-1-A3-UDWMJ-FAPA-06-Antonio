@@ -19,8 +19,8 @@
     <a href="{% url 'noticia:list_noticia' %}" ><button onclick="mudarCor()">Noticia</button></a>
     <a href="{% url 'clients:list_clients' %}" ><button onclick="mudarCor()">Clientes</button></a>
     <a href="{% url 'editor:list_editor' %}" ><button onclick="mudarCor()">Editores</button></a>
-    <a href="#" ><button onclick="alertarMensagem()">Ces</button></a>
-    <a href="#" ><button onclick="alertarMensagem()">Pee</button></a>
+    <a href="{% url 'ndia:list_ndia' %}" ><button onclick="mudarCor()">Noticias do Dia</button></a>
+    
     <br />
 
     {% block body %}
