@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Lista de Editors - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+   <br />
+    <a href="{% url 'editor:add_editor' %}">Cadastro de novo editor</a>
+  <br />
+  <br />
+  <b>Lista de Editors</b>
+  <br />
+  <br />
+  <table border="1">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for editor in editor %}
+        <tr>
+          <th>{{ editor.id }}</th>
+          <td>{{ editor.name }}</td>
+            <td>{{ editor.email }}</td>
+          <td>
+            <a href="{% url 'editor:edit_editor' editor.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'editor:delete_editor' editor.id %}" >Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

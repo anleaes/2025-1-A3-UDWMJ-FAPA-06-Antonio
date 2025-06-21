@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'autor.apps.AutorConfig',
     'noticia.apps.NoticiaConfig',
     'clients.apps.ClientsConfig',
+    'editor.apps.EditorConfig',
+
 ]
 
 MIDDLEWARE = [

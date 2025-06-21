@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Lista de Clientes - {{ block.super }}
+{% endblock %}
+
+{% block body %}
+   <br />
+    <a href="{% url 'clients:add_clients' %}">Cadastro de novo cliente</a>
+  <br />
+  <br />
+  <b>Lista de Clientes</b>
+  <br />
+  <br />
+  <table border="1">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for client in clients %}
+        <tr>
+          <th>{{ client.id }}</th>
+          <td>{{ client.name }}</td>
+            <td>{{ client.email }}</td>
+          <td>
+            <a href="{% url 'clients:edit_clients' client.id %}">Editar</a>
+          </td>
+          <td>
+            <a href="{% url 'clients:delete_clients' client.id %}" >Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

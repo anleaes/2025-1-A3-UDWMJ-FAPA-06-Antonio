@@ -1,8 +1,8 @@
 from django import forms
-from .models import Client
+from .models import Clients
 
-class ClientForm(forms.ModelForm):
+class ClientsForm(forms.ModelForm):
 
     class Meta:
-        model = Client
+        model = Clients
         exclude = ()

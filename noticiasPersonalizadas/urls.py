@@ -26,6 +26,8 @@ urlpatterns = [
     path('fonte/', include('fonte.urls', namespace='fonte')),
     path('autor/', include('autor.urls', namespace='autor')),
     path('noticia/', include('noticia.urls', namespace='noticia')),
+    path('clients/', include('clients.urls', namespace='clients')),
+    path('editor/', include('editor.urls', namespace='editor')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
