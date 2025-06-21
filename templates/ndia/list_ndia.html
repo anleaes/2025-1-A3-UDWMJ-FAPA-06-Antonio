@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Lista de Ndia - {{ block.super }}
+{% endblock title %}
+
+{% block body %}
+
+<br />
+<b>Lista de Ndia</b>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Editor</th>
+            <th>Itens (Notícias)</th>
+            <th> -- </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    {% for ndia in ndia %}
+        <tr>
+            <td>{{ ndia.id }}</td>
+            <td>{{ ndia.editor.name }}</td>
+            <td>
+                {% for ndia_items in ndia_items %}
+                    {% if ndia_items.ndia_id == ndia.id %}
+                        Notícia: {{ ndia_items.noticia.titulo }}
+                        <a href="{% url 'ndia:delete_ndia_item' ndia_items.id %}">Excluir Item</a><br /><br />
+                    {% endif %}
+                {% endfor %}
+                <a href="{% url 'ndia:add_ndia_item' ndia.id %}" class="btn btn-primary btn-sm">Adicionar notícia</a>
+            </td>
+            <td>
+                <a href="{% url 'ndia:delete_ndia' ndia.id %}">Excluir</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock body %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Abrir Ndia - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+<br />
+<br />
+<b>Adicionar noticia? </b>
+<form action="" method="POST">
+{% csrf_token %}
+    <button type="submit">Sim</button> <a href="{% url 'editor:list_editor' %}">Nao</a>
+</form>
+<br />
+<br />
+
+{% endblock body %}

@@ -28,6 +28,7 @@ urlpatterns = [
     path('noticia/', include('noticia.urls', namespace='noticia')),
     path('clients/', include('clients.urls', namespace='clients')),
     path('editor/', include('editor.urls', namespace='editor')),
+    path('ndia/', include('ndia.urls', namespace='ndia')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'noticia.apps.NoticiaConfig',
     'clients.apps.ClientsConfig',
     'editor.apps.EditorConfig',
+    'ndia.apps.NdiaConfig',
+    'widget_tweaks',
 
 ]
 

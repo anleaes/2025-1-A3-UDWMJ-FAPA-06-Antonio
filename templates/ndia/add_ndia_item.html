@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Adicionar Item de Ndia - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+{% load widget_tweaks %}
+
+<br />
+<b>Adicionar Item de Ndia</b>
+<br />
+<br />
+<form action="" method="POST">
+{% csrf_token %}
+    <label>Noticia</label>
+    <br /> 
+    {{ form.noticia|add_class:"form-control" }}
+    <br /> 
+    <br />
+    <button type="submit">Salvar</button>
+ </form>
+
+{% endblock body %}
