@@ -20,7 +20,8 @@
         <th scope="col">Conteudo</th>
         <th scope="col">Data da Publicacao</th>
         <th scope="col">Categoria</th>
-        <th scope="col"></th>
+        <th scope="col">Fonte</th>
+        <th scope="col">Autor</th>
         <th scope="col"></th>
         <th scope="col"></th>
       </tr>
@@ -29,11 +30,20 @@
       {% for noticia in noticia %}
         <tr>
           <th>{{ noticia.id }}</th>
-          <td>{{ noticia.name }}</td>
-          <td>{{ noticia.description }}</td>
-          <td>{{ noticia.url }}</td>
-            <td>
-                <a href="{{ noticia.url }}" target="_blank">Acessar</a>
+          <td>{{ noticia.titulo }}</td>
+          <td>{{ noticia.conteudo }}</td>
+          <td>{{ noticia.dataPublicacao }}</td>
+          <td>
+            {% for noticia_category in noticiascategorias %}
+                {% if noticia_category.noticia_id == noticia.id %}
+                    <li>{{ noticia_category.category }}</li>
+                {% endif %}
+            {% endfor %}
+          </td>
+          <td>{{ noticia.fonte }}</td> 
+          <td>{{ noticia.autor }}</td>
+          
+      
           <td>
             <a href="{% url 'noticia:edit_noticia' noticia.id %}">Editar</a>
           </td>

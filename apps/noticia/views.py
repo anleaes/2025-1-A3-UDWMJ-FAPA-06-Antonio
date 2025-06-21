@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import NoticiaForm
-from .models import Noticia
+from .models import Noticia, NoticiaCategoria
 
 
 # Create your views here.
@@ -21,9 +21,11 @@ def add_noticia(request):
 
 def list_noticia(request):
     template_name = 'noticia/list_noticia.html'
-    noticia = Noticia.objects.filter()
+    noticias = Noticia.objects.all()
+    noticiascategorias = NoticiaCategoria.objects.all()
     context = {
-        'noticia': noticia
+        'noticia': noticias,
+        'noticiascategorias': noticiascategorias,
     }
     return render(request, template_name, context)
 
