@@ -1,0 +1,134 @@
+body {
+    background: #f4f4f4;
+    color: #222;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background: #222;
+    color: #fff;
+    padding: 16px 0;
+    text-align: center;
+}
+
+h1, h2, h3, b {
+    color: #333;
+}
+
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px #bbb;
+}
+
+th, td {
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background: #444;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background: #f0f0f0;
+}
+
+tr:hover {
+    background: #e0e0e0;
+}
+
+form {
+    background: #fff;
+    padding: 24px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #bbb;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    color: #444;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    background: #f7f7f7;
+    font-size: 1em;
+}
+
+button, .btn {
+    background: #444;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover, .btn:hover {
+    background: #222;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+/* Rodapé fixo com botões alinhados à direita */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    padding: 12px 0;
+    box-shadow: 0 -2px 8px #bbb;
+    z-index: 100;
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-right: 40px;
+}
+
+.footer-buttons a button {
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.footer-buttons a button:hover {
+    background: #111;
+}
+
+.center {
+    text-align: center;
+}

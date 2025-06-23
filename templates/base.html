@@ -6,27 +6,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/arquivo_com_estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %}Noticias Personalizadas{% endblock title %}</title>
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #222;
+            padding: 12px 0;
+            box-shadow: 0 2px 8px #bbb;
+            z-index: 100;
+        }
+
+        .footer-buttons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+            margin-right: 40px;
+        }
+
+        body {
+            padding-top: 60px; /* espaço para o menu fixo */
+        }
+    </style>
 </head>
 <body>
-    
-    
-    <br />
-    <a href="{% url 'categories:list_categories' %}" ><button onclick="mudarCor()">Categorias</button></a>
-    <a href="{% url 'fonte:list_fonte' %}" ><button onclick="mudarCor()">Fonte</button></a>
-    <a href="{% url 'autor:list_autor' %}" ><button onclick="mudarCor()">Autor</button></a>
-    <a href="{% url 'noticia:list_noticia' %}" ><button onclick="mudarCor()">Noticia</button></a>
-    <a href="{% url 'clients:list_clients' %}" ><button onclick="mudarCor()">Clientes</button></a>
-    <a href="{% url 'editor:list_editor' %}" ><button onclick="mudarCor()">Editores</button></a>
-    <a href="{% url 'ndia:list_ndia' %}" ><button onclick="mudarCor()">Noticias do Dia</button></a>
-    
+    <header>
+        <div class="footer-buttons">
+            <a href="{% url 'categories:list_categories' %}"><button>Categorias</button></a>
+            <a href="{% url 'fonte:list_fonte' %}"><button>Fonte</button></a>
+            <a href="{% url 'autor:list_autor' %}"><button>Autor</button></a>
+            <a href="{% url 'noticia:list_noticia' %}"><button>Noticia</button></a>
+            <a href="{% url 'clients:list_clients' %}"><button>Clientes</button></a>
+            <a href="{% url 'editor:list_editor' %}"><button>Editores</button></a>
+            <a href="{% url 'ndia:list_ndia' %}"><button>Noticias do Dia</button></a>
+        </div>
+    </header>
+
     <br />
 
     {% block body %}
-    
     {% endblock body %}
-    
+
     <script src="{% static 'js/arquivo_com_javascript.js' %}"></script>
 </body>
 </html>

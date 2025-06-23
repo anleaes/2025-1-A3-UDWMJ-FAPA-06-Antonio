@@ -6,10 +6,12 @@
 
 {% block body %}
    <br />
-    <a href="{% url 'noticia:add_noticia' %}">Cadastro de novo noticia</a>
+    <a href="{% url 'noticia:add_noticia' %}"><button>Cadastro de nova noticia</button></a>
   <br />
   <br />
-  <b>Lista de Noticia</b>
+  <div style="text-align:center;">
+    <b>Noticias</b>
+  </div>
   <br />
   <br />
   <table border="1">
@@ -42,8 +44,6 @@
           </td>
           <td>{{ noticia.fonte }}</td> 
           <td>{{ noticia.autor }}</td>
-          
-      
           <td>
             <a href="{% url 'noticia:edit_noticia' noticia.id %}">Editar</a>
           </td>

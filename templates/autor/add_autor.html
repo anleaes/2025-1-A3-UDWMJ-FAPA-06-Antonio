@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% block title %}
   Adicionar Autor - {{ block.super }}
@@ -6,7 +8,9 @@
 
 {% block body %}
   <br />
-  <b>Cadastro de Autor</b>
+  <div style="text-align:center;">
+    <b>Cadastro de Autor</b>
+  </div>
   <br />
   <br />
   <form action="" method="POST">

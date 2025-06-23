@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% block title %}
   Lista de Autor - {{ block.super }}
@@ -6,10 +8,12 @@
 
 {% block body %}
    <br />
-    <a href="{% url 'autor:add_autor' %}">Cadastro de novo autor</a>
+    <a href="{% url 'autor:add_autor' %}"><button>Cadastro de novo autor</button></a>
   <br />
   <br />
-  <b>Lista de Autor</b>
+  <div style="text-align:center;">
+    <b>Autores</b>
+  </div>
   <br />
   <br />
   <table border="1">
